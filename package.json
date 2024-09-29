@@ -1,0 +1,17 @@
+{
+  "name": "dj-discord-bot",
+  "version": "1.0.0",
+  "description": "For Udemy teaching purposes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Udemy",
+    "Javascript",
+    "Nodejs",
+    "DiscordJS"
+  ],
+  "author": "Joshua Cadavez",
+  "license": "MIT"
+}
