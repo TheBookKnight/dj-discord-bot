@@ -4,7 +4,8 @@
   "description": "For Udemy teaching purposes",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ."
   },
   "keywords": [
     "Udemy",
@@ -13,5 +14,9 @@
     "DiscordJS"
   ],
   "author": "Joshua Cadavez",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^14.16.3",
+    "dotenv": "^16.4.5"
+  }
 }
