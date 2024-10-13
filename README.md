@@ -41,7 +41,7 @@ What are these libraries?
 
 - Discord.js is a powerful Node.js module that allows you to easily interact with the Discord API. Needs NodeJS v18 and higher.
 
-## Part 2: Add Slash commands and DMs
+## Part 2: Adding a Slash command
 
 ```
 npm install @discordjs/rest discord-api-types
