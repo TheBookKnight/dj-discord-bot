@@ -1,5 +1,5 @@
 // Require the necessary discord.js classes
-const { Client, GatewayIntentBits } = require('discord.js');
+const { Client, Events, GatewayIntentBits } = require('discord.js');
 
 require('dotenv').config()
 const token = process.env.TOKEN;
@@ -8,8 +8,8 @@ const token = process.env.TOKEN;
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
 // When the client is ready, run this code (only once)
-client.once('ready', () => {
-    console.log(`Logged in as ${client.user.tag}!`);
+client.once(Events.ClientReady, client => {
+    console.log(`Logged into guild as ${client.user.tag}!`);
     console.log('Ready!');
 });
 
