@@ -36,3 +36,10 @@ Loads the environmental variables from the .env file
 ### What is [DiscordJS npm library](https://www.npmjs.com/package/discord.js)?
 
 Discord.js is a powerful Node.js module that allows you to easily interact with the Discord API. Needs NodeJS v18 and higher.
+
+## Part 2: Setting up OAuth2
+
+OAuth2 enables application developers to build applications that utilize authentication and data from the Discord API. Developers can use this to create things such as web dashboards to display user info, fetch linked third-party accounts like Twitch or Steam, access users' guild information without actually being in the guild, and much more. OAuth2 can significantly extend the functionality of your bot if used correctly.
+
+1. Setup page via [Github Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site)
+   i. Create the index.html page
