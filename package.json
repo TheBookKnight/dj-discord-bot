@@ -16,6 +16,8 @@
   "author": "Joshua Cadavez",
   "license": "MIT",
   "dependencies": {
+    "@discordjs/rest": "^2.4.0",
+    "discord-api-types": "^0.37.101",
     "discord.js": "^14.16.3",
     "dotenv": "^16.4.5"
   }

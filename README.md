@@ -24,3 +24,19 @@ Steps:
 npm install dotenv
 npm install discord.js
 ```
+
+## Part 2: Add Slash commands and DMs
+
+```
+npm install @discordjs/rest discord-api-types
+```
+
+What are these libraries?
+
+1. @discordjs/rest
+
+- This library allows you to make REST requests to the Discord API
+
+2. discord-api-types
+
+- Sets up type definitions for Discord API
