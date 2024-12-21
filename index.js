@@ -1,5 +1,5 @@
 // Require the necessary discord.js classes
-const { Client, Events, GatewayIntentBits } = require('discord.js');
+const { Client, Events, GatewayIntentBits, Partials } = require('discord.js');
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v10');
 
@@ -15,7 +15,19 @@ const commands = [{
 }];
 
 // Create a new client instance
-const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+const client = new Client({
+    intents: [
+        // So, caches for guilds, channels, and roles are populated and available for internal use.
+        GatewayIntentBits.Guilds,
+        // So, the bot can respond to DMs
+        GatewayIntentBits.DirectMessages,
+        GatewayIntentBits.MessageContent
+    ],
+    // So, the bot can respond to DMs
+    partials: [
+        Partials.Channel
+    ]
+});
 
 // configures token so discord rest api can reach guild
 const rest = new REST({ version: '10' }).setToken(token);
@@ -39,13 +51,21 @@ client.once(Events.ClientReady, async client => {
     }
 });
 
-client.on(Events.InteractionCreate, interaction => {
+// Define how to respond to commands
+client.on(Events.InteractionCreate, async interaction => {
     const { commandName } = interaction;
     if (commandName === 'ping') {
         console.log("There was a ping!");
-        interaction.reply('Pong!')
+        await interaction.reply('Pong!')
+    } else {
+        console.log(await interaction);
     }
 });
+
+client.on(Events.MessageCreate, async (message) => {
+    if (message.author.bot) return;
+    return message.reply("I heard you, you said:" + message.content);
+})
 
 // Login to Discord with your client's token
 client.login(token);

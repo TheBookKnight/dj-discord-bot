@@ -64,3 +64,23 @@ What are these libraries?
 
 - Define command (in a list) of what you want to load ([how to define doc](https://discord.com/developers/docs/interactions/application-commands#registering-a-command))
   - and also the reply you want once you get it ([how to interact doc](https://discordjs.guide/creating-your-bot/command-handling.html#receiving-command-interactions))
+
+## Part 3: Setting the Bot to respond to DMs
+
+The Discord bot needs to listen to messages created by the user.
+
+- You need to enable the bot permission to receive and send messages in the Discord dashboard (see [this comment](https://github.com/TheBookKnight/dj-discord-bot/issues/5#issuecomment-2409289433))
+
+  - These are docs about [Intents](https://discordjs.guide/popular-topics/intents.html#enabling-intents)
+  - Docs about [GatewayIntentBits](https://discordjs.guide/popular-topics/intents.html#gateway-intents)
+  - List of [intents](https://discord.com/developers/docs/events/gateway#list-of-intents)
+  - [GatewayIntentBits.MessageContent](https://discord.com/developers/docs/events/gateway#message-content-intent)
+  - Docs about [Partials](https://discordjs.guide/popular-topics/partials.html#partial-structures)
+
+- Set it to listen to messaged created by the user via [Events.MessageCreate](https://discord.com/developers/docs/events/gateway-events#message-create)
+  - Here's the breakdown of the [message](https://discord.com/developers/docs/resources/message#message-object) object
+- Ensure it doesn't perform an endless loop of replies by adding this check. So, it won't reply to message events from the bot
+
+```
+if (message.author.bot) return;
+```
